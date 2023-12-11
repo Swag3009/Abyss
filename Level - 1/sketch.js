@@ -277,11 +277,8 @@ function play_level_2(){
 //life time increase 
   let numArray = [0 ,0 ,0 ,0 ,0];
   for(var i=0; i<lifesV.length; i++){
-    
-    if(camera.y === windowHeight/2)
-      lifesV[i].y = camera.y*2 - 30;
-    else 
-      lifesV[i].y = camera.y + 320
+      
+    lifesV[i].y = camera.y + windowHeight/2 - (30)
 
     if( i % 2===0){
       lifes[i].rotation -= 5;
