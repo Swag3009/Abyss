@@ -186,13 +186,18 @@ thorShield.depth = thor.depth - 1;
 shootFireGroup = new Group();
 
 // steps create 
-  for (var j = 0; j < 7; j++){
+  /*for (var j = 0; j < 7; j++){
     randX = random(200, width - 200);
     var step = createSprite(randX, j*90+80, 200, 15);
     steps.push(step);
     randVelocity = random(-3, 3);
+  }*/
+  for (var j = 6; j >= 0; j--){
+    randX = random(200, width - 200);
+    var step = createSprite(randX, windowHeight-(j*90+100) , 200, 15);
+    steps.push(step);
+    randVelocity = random(-3, 3);
   }
-  console.log('jjjjjjjjjjjjjjjjjjjjjjjjjj',height - steps[6].y)
 // create death 
   for (var i = 0; i < steps.length; i++){
     // create invisible steps to collide
@@ -548,23 +553,38 @@ if(deaths !== undefined){
     deaths[3].changeImage('deathImg2');
 
 
-    setTimeout(() => {
+    /*setTimeout(() => {
       if(deaths[1].y > 140){
       deaths[1].velocityY = -1;}
       if(deaths[1].y < 100){
         deaths[1].velocityY = 1;
       }    
+    }, 1000);*/
+      setTimeout(() => {
+      if(deaths[1].y > steps[1].y-10){
+      deaths[1].velocityY = -1;}
+      if(deaths[1].y < steps[1].y-60){
+        deaths[1].velocityY = 1;
+      }    
     }, 1000);
 
-
-    setTimeout(() => {
+    /*setTimeout(() => {
       if(deaths[deaths.length-1].y > height-130){
       deaths[deaths.length-1].velocityY = -1;}
 
       if(deaths[deaths.length-1].y < height-140){
         deaths[deaths.length-1].velocityY = 1;
       }    
+    }, 1000);*/
+      setTimeout(() => {
+      if(deaths[deaths.length-1].y > steps[6].y-20){
+      deaths[deaths.length-1].velocityY = -1;}
+
+      if(deaths[deaths.length-1].y < steps[6].y-50){
+        deaths[deaths.length-1].velocityY = 1;
+      }    
     }, 1000);
+
 
 
     deathRings[i].x = deaths[i].x;
