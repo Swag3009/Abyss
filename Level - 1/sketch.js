@@ -500,14 +500,17 @@ fireRing.velocityX = keyWeapon.velocityX;
     thor2.y -=10.5;
 
   }
-  if(thor2.y<=steps1[3].y-10)
-    camera.y = windowHeight - (height+height*0.830/2);
+    
+  if(thor2.y<=steps2[2].y-10)
+    camera.y = steps2[3].y+30
   else 
     camera.y = windowHeight/2;
 
-  if(thor2.y<=steps2[6].y-10)
-    camera.y = windowHeight - (height+height*1.355);
+  if(thor2.y<=steps2[4].y-10)
+    camera.y = steps2[5].y-10;
 
+  if(thor2.y<=steps2[6].y-10)
+    camera.y = steps1[8].y-10;
   
 
   // game over 
